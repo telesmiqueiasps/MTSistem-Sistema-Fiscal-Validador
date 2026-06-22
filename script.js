@@ -19,32 +19,34 @@ async function carregarClientes() {
     renderizarClientes(dados.clientes, corpoTabela);
   } catch (erro) {
     infoVersao.innerHTML = "";
-    corpoTabela.innerHTML = `<tr><td colspan="3" class="info-msg">Não foi possível carregar os dados: ${erro.message}</td></tr>`;
+    corpoTabela.innerHTML = `<tr><td colspan="5" class="info-msg">Não foi possível carregar os dados: ${erro.message}</td></tr>`;
   }
 }
 
 function renderizarInfoVersao(dados, infoVersao) {
-  infoVersao.innerHTML = `
-    <p><strong>Versão atual:</strong> ${dados.versao_atual}</p>
-    <p>${dados.mensagem_update}</p>
-    <a href="${dados.exe_url}" class="btn-download">Baixar atualização</a>
-  `;
+  infoVersao.innerHTML = `<p>${dados.mensagem_update}</p>`;
 }
 
 function renderizarClientes(clientes, corpoTabela) {
   if (!clientes || clientes.length === 0) {
-    corpoTabela.innerHTML = `<tr><td colspan="3" class="info-msg">Nenhum cliente encontrado.</td></tr>`;
+    corpoTabela.innerHTML = `<tr><td colspan="5" class="info-msg">Nenhum cliente encontrado.</td></tr>`;
     return;
   }
 
   corpoTabela.innerHTML = clientes
     .map((cliente) => {
       const statusClasse = STATUS_CLASSES[cliente.status?.toLowerCase()] || "";
+      const versao = cliente.versao_atual || "-";
+      const download = cliente.exe_url
+        ? `<a href="${cliente.exe_url}" class="btn-download">Baixar</a>`
+        : "-";
       const mensagem = cliente.mensagem_bloqueio || "-";
       return `
         <tr>
           <td>${cliente.id}</td>
           <td><span class="status-badge ${statusClasse}">${cliente.status}</span></td>
+          <td>${versao}</td>
+          <td>${download}</td>
           <td>${mensagem}</td>
         </tr>
       `;
