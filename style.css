@@ -31,6 +31,12 @@ body {
   text-align: center;
 }
 
+.auth-logo {
+  width: 72px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
 .auth-box h2 {
   margin: 0 0 16px;
   color: #0b3d62;
@@ -71,6 +77,17 @@ header {
   background-color: #0b3d62;
   color: #fff;
   padding: 24px 32px;
+}
+
+.header-principal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo {
+  width: 56px;
+  height: auto;
 }
 
 header h1 {
