@@ -1,7 +1,6 @@
 {
-  "mensagem_update": "Nova versão teste disponivel para verificação",
+  "mensagem_update": "Nova versão DISPONÍVEL! Baixe e melhore a performance do sistema.",
   "clientes": [
-    { "id": "CLIENTE001", "status": "ok", "versao_atual": "1.2.0", "exe_url": "https://github.com/telesmiqueiasps/MTSistem-Sistema-Fiscal-Validador/releases/download/v1.2.0/MTSistem.exe" },
-    { "id": "CLIENTE002", "status": "bloqueado", "mensagem_bloqueio": "Mensalidade pendente. Contate o suporte." }
+    { "id": "CLIENTE001TORTAFREIDAMIAO", "status": "ok", "versao_atual": "1.2.0", "exe_url": "https://github.com/telesmiqueiasps/MTSistem-Sistema-Fiscal-Validador/releases/download/v1.2.0/MTSistem.exe" } 
   ]
 }
