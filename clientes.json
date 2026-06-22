@@ -1,0 +1,9 @@
+{
+  "versao_atual": "1.2.0",
+  "exe_url": "https://SEU-SITE.netlify.app/downloads/MTSistem.exe",
+  "mensagem_update": "Nova versão disponível com melhorias e correções.",
+  "clientes": [
+    { "id": "CLIENTE001", "status": "ok" },
+    { "id": "CLIENTE002", "status": "bloqueado", "mensagem_bloqueio": "Mensalidade pendente. Contate o suporte." }
+  ]
+}
