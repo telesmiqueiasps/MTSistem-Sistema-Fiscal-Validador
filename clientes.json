@@ -1,6 +1,6 @@
 {
   "mensagem_update": "Nova versão DISPONÍVEL! Baixe e melhore a performance do sistema.",
   "clientes": [
-    { "id": "CLIENTE001TORTAFREIDAMIAO", "status": "ok", "versao_atual": "1.2.0", "exe_url": "https://github.com/telesmiqueiasps/MTSistem-Sistema-Fiscal-Validador/releases/download/v1.2.0/MTSistem.exe" } 
+    { "id": "CLIENTE001TORTAFREIDAMIAO", "status": "bloqueado", "versao_atual": "1.2.0", "exe_url": "https://github.com/telesmiqueiasps/MTSistem-Sistema-Fiscal-Validador/releases/download/v1.2.0/MTSistem.exe" } 
   ]
 }
