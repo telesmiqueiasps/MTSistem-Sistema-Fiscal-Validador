@@ -3,6 +3,8 @@ const STATUS_CLASSES = {
   "bloqueado": "status-inativo",
 };
 
+let clientesCarregados = [];
+
 async function carregarClientes() {
   const infoVersao = document.getElementById("info-versao");
   const corpoTabela = document.getElementById("corpo-tabela");
@@ -16,7 +18,8 @@ async function carregarClientes() {
 
     const dados = await resposta.json();
     renderizarInfoVersao(dados, infoVersao);
-    renderizarClientes(dados.clientes, corpoTabela);
+    clientesCarregados = dados.clientes || [];
+    renderizarClientes(clientesCarregados, corpoTabela);
   } catch (erro) {
     infoVersao.innerHTML = "";
     corpoTabela.innerHTML = `<tr><td colspan="5" class="info-msg">Não foi possível carregar os dados: ${erro.message}</td></tr>`;
@@ -54,4 +57,20 @@ function renderizarClientes(clientes, corpoTabela) {
     .join("");
 }
 
-document.addEventListener("DOMContentLoaded", carregarClientes);
+function filtrarClientes(termo) {
+  const corpoTabela = document.getElementById("corpo-tabela");
+  const termoNormalizado = termo.trim().toLowerCase();
+
+  const clientesFiltrados = termoNormalizado
+    ? clientesCarregados.filter((cliente) => cliente.id?.toLowerCase().includes(termoNormalizado))
+    : clientesCarregados;
+
+  renderizarClientes(clientesFiltrados, corpoTabela);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  carregarClientes();
+
+  const buscaInput = document.getElementById("busca-cliente");
+  buscaInput.addEventListener("input", (evento) => filtrarClientes(evento.target.value));
+});

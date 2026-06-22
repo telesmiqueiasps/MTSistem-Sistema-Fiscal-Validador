@@ -134,6 +134,23 @@ main {
   background-color: #0a3252;
 }
 
+.busca-wrapper {
+  margin-bottom: 16px;
+}
+
+#busca-cliente {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#busca-cliente:focus {
+  outline: none;
+  border-color: #0b3d62;
+}
+
 .table-wrapper {
   background-color: #fff;
   border-radius: 8px;
