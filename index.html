@@ -7,36 +7,48 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>MT Sistem - Validador</h1>
-    <p>Painel de acompanhamento de clientes e versões do sistema fiscal</p>
-  </header>
+  <div id="auth-overlay" class="auth-overlay">
+    <form id="auth-form" class="auth-box">
+      <h2>Acesso restrito</h2>
+      <input type="password" id="auth-senha" placeholder="Senha" autocomplete="current-password" required />
+      <button type="submit">Entrar</button>
+      <p id="auth-erro" class="auth-erro" hidden>Senha incorreta.</p>
+    </form>
+  </div>
 
-  <main>
-    <section id="info-versao" class="info-versao">
-      <p class="info-msg">Carregando informações da versão...</p>
-    </section>
+  <div id="conteudo-principal" class="oculto">
+    <header>
+      <h1>MT Sistem - Validador</h1>
+      <p>Painel de acompanhamento de clientes e versões do sistema fiscal</p>
+    </header>
 
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>ID Cliente</th>
-            <th>Status</th>
-            <th>Versão Atual</th>
-            <th>Download</th>
-            <th>Mensagem</th>
-          </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-          <tr>
-            <td colspan="5" class="info-msg">Carregando clientes...</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
+    <main>
+      <section id="info-versao" class="info-versao">
+        <p class="info-msg">Carregando informações da versão...</p>
+      </section>
 
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Cliente</th>
+              <th>Status</th>
+              <th>Versão Atual</th>
+              <th>Download</th>
+              <th>Mensagem</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <tr>
+              <td colspan="5" class="info-msg">Carregando clientes...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

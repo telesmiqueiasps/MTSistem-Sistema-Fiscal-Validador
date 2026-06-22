@@ -9,6 +9,64 @@ body {
   color: #1f2937;
 }
 
+.oculto {
+  display: none;
+}
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 61, 98, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.auth-box {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin: 0 0 16px;
+  color: #0b3d62;
+  font-size: 1.2rem;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0b3d62;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-box button:hover {
+  background-color: #0a3252;
+}
+
+.auth-erro {
+  color: #b91c1c;
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+}
+
 header {
   background-color: #0b3d62;
   color: #fff;
